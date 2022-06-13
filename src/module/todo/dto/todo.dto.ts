@@ -3,13 +3,21 @@ import { IsEmail, isNotEmpty, IsNotEmpty, IsNumber, isPhoneNumber , } from 'clas
 export class todoDto {
 
   @IsNotEmpty()
-  faculty!: string;
+  email!: string;
+
+  @IsNumber()
+  _id!: number;
 
   @IsNotEmpty()
   name!: string;
- 
+
+  @IsNotEmpty()
+  color!: string;
+
   @IsNumber()
-  code!: number;
+  taskid!: number;
+ 
+
 
  
 
