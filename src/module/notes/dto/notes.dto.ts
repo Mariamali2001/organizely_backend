@@ -1,4 +1,4 @@
-import { IsEmail, IsNotEmpty, IsNumber, isPhoneNumber , } from 'class-validator';
+import { IsNotEmpty, IsNumber } from 'class-validator';
 
 export class NotesDto {
 
@@ -16,6 +16,8 @@ export class NotesDto {
   
   @IsNotEmpty()
   notes!: string;
-
+  
+  @IsNotEmpty()
+  image!: string;
 
 }

@@ -21,8 +21,10 @@ export class Notes {
     @Prop({ required: true })
     notes : string | undefined;
     
-    // @Prop({ required: true })
-    // pin : boolean | undefined;
+    @Prop({ required: true })
+    image: string ;
+  
+  
             
 
 }
