@@ -1,7 +1,7 @@
 import { Controller, Get, Request, UseGuards,Post, Body,Param, Delete, Patch } from '@nestjs/common';
 
-import { todoDto } from '../todo/dto/todo.dto';
-import { TodoService } from '../todo/todo.service';
+import { todoDto } from './dto/todo.dto';
+import { TodoService } from './todo.service';
 
 
 

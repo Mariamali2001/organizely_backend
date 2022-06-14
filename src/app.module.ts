@@ -3,10 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule } from '@nestjs/config';
-import { NotesModule } from '../src/module/notes/notes.module';
-import { TodoModule } from '../src/module/todo/todo.module';
-import { NotesController } from '../src/module/notes/notes.controller';
-import {TodoController } from '../src/module/todo/todo.controller';
+import { NotesModule } from './module/notes/notes.module';
+import { TodoModule } from './module/todo/todo.module';
+import { NotesController } from './module/notes/notes.controller';
+import {TodoController } from './module/todo/todo.controller';
 require('dotenv').config();
 @Module({
   imports: [

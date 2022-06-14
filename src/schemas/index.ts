@@ -1,3 +1,3 @@
 
-export * from './notes.schema'
-export * from './task.schema'
+export * from '../schemas/notes.schema'
+export * from '../schemas/task.schema'

@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { Notes, NotesDocument } from './../../schemas/index';
+import { Notes, NotesDocument } from '../../schemas/index';
 import { Model } from 'mongoose';
 
-import { NotesDto } from '../notes/dto/notes.dto';
+import { NotesDto } from './dto/notes.dto';
 
 @Injectable()
 export class NoteService {

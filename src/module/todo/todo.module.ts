@@ -1,8 +1,8 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { Task, TodoSchema } from "../../schemas/index"
-import {TodoController } from '../todo/todo.controller'
-import {TodoService } from '../todo/todo.service';
+import {TodoController } from './todo.controller'
+import {TodoService } from './todo.service';
 
 
 @Module({
