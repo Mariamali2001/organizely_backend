@@ -5,9 +5,6 @@ export class todoDto {
   @IsNotEmpty()
   email!: string;
 
-  @IsNumber()
-  _id!: number;
-
   @IsNotEmpty()
   name!: string;
 
@@ -15,10 +12,10 @@ export class todoDto {
   color!: string;
 
   @IsNumber()
-  taskid!: number;
- 
+  todoid!: number;
 
-
+  @IsNotEmpty()
+  complete!: boolean;
  
 
 

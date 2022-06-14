@@ -8,29 +8,42 @@ import { todoDto } from "./dto/todo.dto";
 @Injectable()
 export class TodoService {
     constructor(
-        @InjectModel(Task.name) private TodoModel: SoftDeleteModel <TodoDocument>,
+        @InjectModel(Task.name) private TodoModel: Model <TodoDocument>,
         
       ) {}
 
 
-      findAllByEmail(email:string) {
-        return this.TodoModel.find({ email: email }).exec();
+      findAllByEmail(email:string, todoid:number) {
+        return this.TodoModel.find({ email: email,todoid:todoid  }).exec();
       }
-      findOne(id: number) {
-        return this.TodoModel.findById(id);
-      }
+     
       async createTodo(dto:todoDto) {
         const newTodo = new this.TodoModel(dto);
         return newTodo.save();
       }
 
-      update(id: number, todoDto: todoDto) {
-        const filter = { _id: id };
-        return this.TodoModel.updateOne(filter,todoDto);
+     async update(id: string) {
+
+        let todo = await this.TodoModel.findOne({ _id:id }).exec();
+        if (todo) {
+      return await this.TodoModel
+        .updateOne(
+          { _id: id },
+          {
+            $set: {
+              complete: !todo.complete,
+            },
+          },
+          { upsert: true },
+        )
+        .exec();
+    }
       }  
-      async remove(id: number) {
+
+
+      async remove(id: string) {
         const filter  = { _id: id };
     
-        const deleted = await this.TodoModel.softDelete(filter);
+        const deleted = await this.TodoModel.remove(filter);
         return deleted; }
 }

@@ -20,22 +20,13 @@ export class NoteService {
   }
 
 
-  async addNotes(id: number): Promise<any> {
-    let Not = await this.NotesModel.findOne({ _id: id }).exec();
-    if (Not) {
-      await this.NotesModel
-        .updateOne(
-          { _id: id },
-          {
-            $set: {
-              notes: (Not.name),
-            },
-          },
-          { upsert: true },
-        )
-        .exec();
-    }
-  }
+  async remove(id: string) {
+    const filter  = { _id: id };
+
+    const deleted = await this.NotesModel.remove(filter);
+    return deleted; }
+
+ 
 
 
   

@@ -10,9 +10,6 @@ export class Notes {
     email: string | undefined;
 
     @Prop({ required: true })
-    _id : number | undefined;
-
-    @Prop({ required: true })
     name : string | undefined;
 
     @Prop({ required: true })
@@ -21,8 +18,8 @@ export class Notes {
     @Prop({ required: true })
     notes : string | undefined;
     
-    @Prop({ required: true })
-    image: string ;
+    // @Prop({ required: true })
+    // image: string ;
   
   
             

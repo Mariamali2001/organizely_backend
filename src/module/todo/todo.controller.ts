@@ -10,9 +10,9 @@ export class TodoController {
   constructor(private TodoService: TodoService) {}
 
 
-  @Get('/:email')
-  getTodo(@Param('email') email:string){
-    return this.TodoService.findAllByEmail(email);
+  @Get('/todos')
+  getTodo(@Body() email:string, todoid:number){
+    return this.TodoService.findAllByEmail(email,todoid);
   }
 
 
@@ -21,20 +21,15 @@ export class TodoController {
     return this.TodoService.createTodo(dto);
   }
 
-  @Get(':id')
-  findOne(@Param('id') id: number) {
-    return this.TodoService.findOne(id);
-  }
- 
 
-  @Delete(':id')
-  remove(@Param('id') id: number) {
+  @Delete('/delete/:id')
+  remove(@Param('id') id: string) {
     return this.TodoService.remove(id);
   }
   
-  @Patch(':id')
-  update(@Param('id') id: number, @Body() todoDto: todoDto) {
-    return this.TodoService.update(id, todoDto);
+  @Patch('/:id')
+  update(@Param('id') id: string) {
+    return this.TodoService.update(id);
   }
   
 }

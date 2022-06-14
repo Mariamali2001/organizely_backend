@@ -10,17 +10,15 @@ export class Task {
     email: string | undefined;
 
     @Prop({ required: true })
-    _id : number | undefined;
-
-    @Prop({ required: true })
     name : string | undefined;
 
     @Prop({ required: true })
     color : string | undefined;
     
     @Prop({ required: true })
-    taskid : number | undefined;
+    todoid : number | undefined;
             
-
+    @Prop({ required: true })
+    complete : boolean | undefined;
 }
 export const TodoSchema = SchemaFactory.createForClass(Task);

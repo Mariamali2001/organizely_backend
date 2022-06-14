@@ -11,7 +11,7 @@ require('dotenv').config();
 @Module({
   imports: [
     ConfigModule.forRoot(),
-    MongooseModule.forRoot(process.env.MONGO),
+    MongooseModule.forRoot("mongodb+srv://Mariam2001:Mariambashandy22@cluster0.r1ztk.mongodb.net/smd?retryWrites=true&w=majority"),
     NotesModule,
     TodoModule,
    

@@ -5,8 +5,6 @@ export class NotesDto {
   @IsNotEmpty()
   email!: string;
  
-  @IsNumber()
-  _id!: number;
 
   @IsNotEmpty()
   name!: string;
@@ -17,7 +15,7 @@ export class NotesDto {
   @IsNotEmpty()
   notes!: string;
   
-  @IsNotEmpty()
-  image!: string;
+  // @IsNotEmpty()
+  // image!: string;
 
 }
